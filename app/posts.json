@@ -1,0 +1,18 @@
+{
+  "2014-03-05-welcome-to-jekyll": {
+    "layout": "post",
+    "title": "News 1",
+    "date": "2015-01-05T20:09:40.000Z",
+    "categories": "jekyll update",
+    "preview": "You'll find this post in your `_posts` directory - edit this post and …",
+    "iso8601Date": "2015-01-05T21:09:40+01:00",
+    "basename": "2014-03-05-welcome-to-jekyll"
+  },
+  "2015-01-05-yo-jekyllrb": {
+    "layout": "post",
+    "title": "News 2",
+    "categories": "jekyll update",
+    "preview": "# 'Allo, 'Allo!\n\nYou now have\n\n- Jekyll\n- Sass\n- redcarpet markdown …",
+    "basename": "2015-01-05-yo-jekyllrb"
+  }
+}

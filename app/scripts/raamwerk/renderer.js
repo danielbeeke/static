@@ -1,4 +1,4 @@
-define(['twig', 'templates'], function (twig, templates) {
+define(['twig', 'raamwerk/templates'], function (twig, templates) {
   'use strict'
 
   // Makes it possible to render sub templates.

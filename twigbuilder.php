@@ -26,7 +26,7 @@ foreach ($files as $file) {
 
 $file = $start . "\n" . $output . "\n" . $end;
 
-file_put_contents('app/scripts/templates.js', $file);
+file_put_contents('app/scripts/raamwerk/templates.js', $file);
 
 function getTwigTemplates ($path, $parent = NULL) {
   if (!$parent) {

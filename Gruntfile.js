@@ -33,16 +33,12 @@ module.exports = function (grunt) {
         // TODO: Make this conditional
         watch: {
             shell: {
-                files: ['<%= yeoman.app %>/templates/{,*/}{,*/}*.html'],
+                files: ['<%= yeoman.app %>/templates/{,*/}*.html'],
                 tasks: ['shell:twig']
             },
-            coffee: {
-                files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
-                tasks: ['coffee:dist']
-            },
-            coffeeTest: {
-                files: ['test/spec/{,*/}*.coffee'],
-                tasks: ['coffee:test']
+            shell2: {
+                files: ['<%= yeoman.app %>/_posts/{,*/}*.md'],
+                tasks: ['shell:markdown']
             },
             compass: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}', '<%= yeoman.app %>/styles/{,*/}/*/*.{scss,sass}'],
@@ -53,7 +49,7 @@ module.exports = function (grunt) {
                     livereload: LIVERELOAD_PORT
                 },
                 files: [
-                    '<%= yeoman.app %>/{,*/}*.html',
+                    '<%= yeoman.app %>/posts.json',
                     '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
                     '{.tmp,<%= yeoman.app %>}/scripts/{,*/}{,*/}*.js',
                     '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
@@ -78,6 +74,10 @@ module.exports = function (grunt) {
             twig: {
                 dist: {},
                 command: 'php twigbuilder.php'
+            },
+            markdown: {
+                dist: {},
+                command: 'node_modules/markdown-to-json/bin/m2j -o app/posts.json app/_posts/*'
             }
         },
 
@@ -90,7 +90,7 @@ module.exports = function (grunt) {
             },
             pages: {
                 options: {
-                    remote: 'git@github.com:danielbeeke/raamwerk.git',
+                    remote: 'git@github.com:danielbeeke/static.git',
                     branch: 'gh-pages'
                 }
             }
@@ -442,6 +442,7 @@ module.exports = function (grunt) {
             'concurrent:server',
             'connect:livereload',
             'shell:twig',
+            'shell:markdown',
             'open:server',
             'watch'
         ]);
@@ -455,6 +456,7 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('build', [
+        'shell:markdown',
         'shell:twig',
         'clean:dist',
         'useminPrepare',

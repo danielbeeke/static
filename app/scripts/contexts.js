@@ -8,6 +8,7 @@ define([], function () {
         route: ['*'],
       },
       reactions: {
+        dependencies: ['requester'],
         layer: [{
           key: 'home',
           layout: 'home',
@@ -17,25 +18,14 @@ define([], function () {
       }
     },
 
-    'journey': {
+    'about': {
       conditions: {
-        route: ['journey/*']
+        route: ['about'],
       },
       reactions: {
-        dependencies: ['journey/timeline', 'fixtures'],
         layer: [{
-          key: 'journey',
-          layout: 'journey',
-          data: function () {
-            var timeline = require('journey/timeline')
-            var returnData = require('fixtures')
-            returnData.timeline = timeline.prepareTimeline(require('fixtures'))
-            return returnData
-          },
-          postRender: function () {
-            var timeline = require('journey/timeline')
-            timeline.init()
-          }
+          key: 'about',
+          layout: 'about',
         }]
       }
     },
