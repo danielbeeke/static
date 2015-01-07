@@ -1,0 +1,24 @@
+@include sgs-change('debug', true);
+
+body {
+  &:after {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    @include background-grid($color: blue);
+    user-select: none;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity .5s;
+  }
+}
+
+.has-grid-overlay-enabled {
+  &:after {
+    opacity: 0.3;
+  }
+}

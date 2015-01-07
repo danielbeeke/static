@@ -1,0 +1,15 @@
+{
+  "name": "raamwerk",
+  "private": true,
+  "dependencies": {
+    "jquery": "~1.11.1",
+    "modernizr": "~2.8.2",
+    "twig.js": "~0.7.2",
+    "requirejs": "~2.1.15",
+    "history": "devote/HTML5-History-API#~4.1.15",
+    "dragdealer": "skidding/dragdealer#~0.9.8",
+    "underscore": "~1.7.0",
+    "object-watch": "https://gist.githubusercontent.com/flackjap/f318e6a2b316e4d9fa44/raw/00babb568f851904ecea7c1f5317f7e7e4c7b8a2/object-watch.js",
+    "async": "caolan/async#~0.9.0"
+  }
+}
