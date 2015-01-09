@@ -25,7 +25,6 @@ define(['raamwerk/renderer'], function (renderer) {
       },
 
       makeActive: function () {
-        $('[layer].active').removeClass('active')
         $(innerClass.element).addClass('active')
       },
 

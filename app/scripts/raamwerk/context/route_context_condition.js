@@ -66,6 +66,22 @@ define(['raamwerk/context', 'history', 'raamwerk/smooth_transitions'], function 
       return String(str)
         .replace(new RegExp('[.\\\\+*?\\[\\^\\]$(){}=!<>|:\\' + (delimiter || '') + '-]', 'g'), '\\$&');
     },
+
+
+    arg: function(index) {
+      var parameters = route_context_condition.cleanPath(location.pathname)
+      var args = parameters.split('/')
+      if (parseInt(index) && args[index]) {
+        return args[index]
+      }
+      else if (parseInt(index) && !args[index]) {
+        return false
+      }
+      else {
+        return args
+      }
+    },
+
   }
 
   return route_context_condition

@@ -1,0 +1,9 @@
+[layer="home"] {
+  opacity: 0;
+  padding-top: 40px;
+  z-index: 4;
+
+  &.active {
+    opacity: 1;
+  }
+}

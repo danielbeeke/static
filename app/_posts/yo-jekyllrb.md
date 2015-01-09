@@ -1,7 +1,9 @@
 ---
 layout: post
 title:  "News 2"
-categories: jekyll update
+categories:
+- jekyll
+- update
 ---
 
 # 'Allo, 'Allo!

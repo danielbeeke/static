@@ -7,7 +7,8 @@ require.config({
     underscore: '../bower_components/underscore/underscore',
     history: '../bower_components/history/history',
     objectwatch: '../bower_components/object-watch/index',
-    async: '../bower_components/async/lib/async'
+    async: '../bower_components/async/lib/async',
+    marked: '../bower_components/marked/lib/marked'
   }
 })
 

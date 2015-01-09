@@ -1,13 +1,17 @@
-define(['raamwerk/layer'], function (layer) {
+define(['raamwerk/layer', 'jquery'], function (layer, $) {
   'use strict'
 
   // The layers factory
+
+  $(window).on('popstate smooth_transition', function(e) {
+    $('[layer].active').removeClass('active')
+  })
 
   var layers = {
     stack: {},
     addLayer: function (info) {
 
-      if (!layers.stack[info.key]) {
+      if (!layers.stack[info.key] || info.rerender) {
         var currentLayer = layers.stack[info.key] = new layer(info)
         currentLayer.render()
       }

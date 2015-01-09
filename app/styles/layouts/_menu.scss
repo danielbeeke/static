@@ -1,0 +1,20 @@
+[layer="menu"] {
+  position: fixed;
+  background: black;
+  width: 100%;
+  color: white;
+  top: 0;
+  left: 0;
+  z-index: 21;
+
+  .logo {
+    height: 40px;
+  }
+
+  ul {
+    li {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
