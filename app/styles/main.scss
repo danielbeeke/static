@@ -4,10 +4,12 @@
 $menu-height: 77px;
 $yellow: #ffd400;
 $gray: #323433;
+$speed: 1s;
 
 @import "compass";
 @import "breakpoint";
 @import "singularitygs";
+@import "functions/*";
 @import "layout/*";
 @import "layouts/*";
 @import "modules/*";

@@ -1,7 +1,13 @@
 <div class="post--full">
-  <h3>{{ post.title }}</h3>
+  <div class="img-wrapper">
+    <img src="/images/thumbs/{{ post.basename }}.jpg">
+  </div>
 
-  <div class="body">
-    {{ post.full }}
+  <div class="post--content">
+    <h3>{{ post.title }}</h3>
+
+    <div class="body">
+      {{ post.full }}
+    </div>
   </div>
 </div>

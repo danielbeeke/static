@@ -15,5 +15,11 @@ body,
   position: relative;
   font-size: 16px;
   font-family: 'robotoregular';
+  overflow: hidden;
 }
 
+#app {
+  width: 100%;
+  box-sizing: content-box;
+  padding-right: 20px;
+}

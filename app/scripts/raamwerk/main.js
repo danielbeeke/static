@@ -16,5 +16,9 @@ require(['jquery', 'raamwerk/context'], function ($, context) {
 
   'use strict'
 
+  window.transitionEnd = 'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend'
+  window.animationEnd = 'webkitAnimationEnd oanimationend msAnimationEnd animationend'
+  window.maxWaitForTransition = 3000
+
   context.init()
 })

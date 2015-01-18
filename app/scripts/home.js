@@ -4,8 +4,15 @@ define(['underscore', 'requester'], function (_, requester) {
   var home = {
     init: function () {
 
-      $('.post--teaser').click(function () {
+      $('.post--teaser').on('click', function () {
+        var that = this
         $(this).addClass('active')
+      })
+
+      $('body').on('layer-active', function (e, layer) {
+        if (layer.key == 'home') {
+          $('.post--teaser.active').removeClass('active')
+        }
       })
 
     }

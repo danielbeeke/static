@@ -18,7 +18,10 @@ define([], function () {
               posts: requester.get()
             }
           },
-          // postRender: function () {}
+          postRender: function () {
+            var home = require('home')
+            home.init()
+          }
         }]
       }
     },

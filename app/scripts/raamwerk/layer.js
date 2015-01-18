@@ -9,7 +9,10 @@ define(['raamwerk/renderer'], function (renderer) {
   //   layout: 'two-columns'
   // }
 
+  // The main concept for animating routes is that you leave the old layer in a state and you return to the same state.
+
   var layer = function (info) {
+    var timeout
     var innerClass = {
       key: info.key,
       layout: info.layout,
@@ -26,12 +29,14 @@ define(['raamwerk/renderer'], function (renderer) {
 
       makeActive: function () {
         this.active = true
-        $(innerClass.element).addClass('active')
+        $(innerClass.element).removeClass('inactive').addClass('active')
+        $('body').trigger( 'layer-active', [innerClass] )
       },
 
       makeInActive: function () {
         this.active = false
-        $(innerClass.element).removeClass('active')
+        $(innerClass.element).removeClass('active').addClass('inactive')
+        $('body').trigger( 'layer-inactive', [innerClass] )
       },
 
       render: function () {

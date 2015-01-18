@@ -1,4 +1,14 @@
 {
+  "1-green-giraffe-2": {
+    "title": "Green Giraffe",
+    "subtitle": "The renewable energy financial advisors",
+    "tags": [
+      "Ruby",
+      "Ruby on Rails"
+    ],
+    "preview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean …",
+    "basename": "1-green-giraffe-2"
+  },
   "atechpro": {
     "title": "Atechpro",
     "subtitle": "Leverancier van hoge kwaliteit biomassa-ketels",
@@ -19,7 +29,7 @@
       "Ruby",
       "Ruby on Rails"
     ],
-    "preview": "Just a quick Ruby on Rails tip. This is how I implemented a method to …",
+    "preview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean …",
     "basename": "green-giraffe"
   },
   "infographics": {
@@ -29,7 +39,7 @@
       "Ruby",
       "Ruby on Rails"
     ],
-    "preview": "I've been writing a lot of statistics queries in Active Record/MySQL …",
+    "preview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean …",
     "basename": "infographics"
   },
   "q-suite": {
@@ -37,7 +47,7 @@
     "tags": [
       "Git"
     ],
-    "preview": "With , if you have some work in progress and find you need to switch …",
+    "preview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean …",
     "basename": "q-suite"
   }
 }

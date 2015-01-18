@@ -1,7 +1,7 @@
 [layer="home"] {
-  &:hover {
+  &:not(.out):hover {
     .post--teaser {
-      height: 20%;
+      height: 30%;
 
       &:after {
         opacity: .8;
@@ -12,12 +12,13 @@
 
 .post--teaser {
   width: 100%;
-  height: 25%;
+  height: 33%;
   overflow: hidden;
   background: white;
   float: left;
   position: relative;
-  transition: all .5s;
+  transition: height .8s;
+  outline: none;
 
   &:after {
     content: '';
@@ -58,8 +59,24 @@
   }
 }
 
-[layer="home"].out {
-  .post--teaser {
-    height: 0;
+[layer="home"].inactive {
+  .post--teaser:not(.active) {
+    height: 0 !important;
+
+    &:after {
+      opacity: .8 !important;
+    }
+  }
+
+  .post--teaser.active {
+    height: 200px !important;
+
+    &:after {
+      opacity: 0;
+    }
+
+    img {
+      transform: translateY(-50%) scale(1);
+    }
   }
 }

@@ -6,16 +6,29 @@
   top: 0;
   left: 0;
   z-index: 21;
+  height: 77px;
 
   .logo {
     height: 40px;
   }
 
   ul {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 18px 0;
+
     li {
       display: inline-block;
       vertical-align: middle;
+
+      &:first-child {
+        margin-right: 100px;
+      }
     }
+  }
+
+  li + li {
+    margin-left: 20px;
   }
 
   a:link, a:visited {

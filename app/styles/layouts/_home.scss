@@ -1,9 +1,8 @@
 [layer="home"] {
   @include clearfix;
-  opacity: 0;
   padding-top: $menu-height;
   z-index: 4;
-  background: black;
+  background: white;
   height: 100%;
   position: absolute;
   width: 100%;
@@ -11,11 +10,12 @@
   left: 0;
 
   &.active {
-    opacity: 1;
+
   }
 
   .post-wrapper {
     height: 100%;
+    overflow-y: scroll;
     position: relative;
   }
 }
