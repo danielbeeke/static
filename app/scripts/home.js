@@ -3,7 +3,11 @@ define(['underscore', 'requester'], function (_, requester) {
 
   var home = {
     init: function () {
-      // var stories = requester.get()
+
+      $('.post--teaser').click(function () {
+        $(this).addClass('active')
+      })
+
     }
   }
 

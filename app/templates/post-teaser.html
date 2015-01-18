@@ -1,4 +1,5 @@
-<div class="post--teaser">
-  <h3><a href="/post/{{ post.basename }}">{{ post.title }}</a></h3>
-  <p class="teaser">{{ post.preview }}</p>
-</div>
+<a href="/post/{{ post.basename }}" class="post--teaser">
+  <img src="/images/thumbs/{{ post.basename }}.jpg">
+  <h3>{{ post.title }}</h3>
+  <h4>{{ post.subtitle }}</h4>
+</a>

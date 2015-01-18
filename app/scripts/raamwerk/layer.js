@@ -25,7 +25,13 @@ define(['raamwerk/renderer'], function (renderer) {
       },
 
       makeActive: function () {
+        this.active = true
         $(innerClass.element).addClass('active')
+      },
+
+      makeInActive: function () {
+        this.active = false
+        $(innerClass.element).removeClass('active')
       },
 
       render: function () {

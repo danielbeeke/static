@@ -1,4 +1,4 @@
-define(['raamwerk/context', 'history', 'raamwerk/smooth_transitions'], function (context, history, smooth_transitions) {
+define(['raamwerk/context', 'history'], function (context, history) {
   'use strict'
 
   // A context condition plugin gets a list of contexts that apply for the plugin.
@@ -11,7 +11,10 @@ define(['raamwerk/context', 'history', 'raamwerk/smooth_transitions'], function 
 
       // Enable fake urls with smooth transitions.
       // HTML5 history API.
-      smooth_transitions.init()
+      $(document).on('click touch', 'a', function(e) {
+        e.preventDefault()
+        route_context_condition.goTo($(this).attr('href'))
+      })
 
       $(window).on('popstate smooth_transition', function(e) {
         var path = route_context_condition.cleanPath(location.pathname)
@@ -19,6 +22,11 @@ define(['raamwerk/context', 'history', 'raamwerk/smooth_transitions'], function 
       })
 
       // Initial path.
+      $(window).triggerHandler('smooth_transition')
+    },
+
+    goTo: function (path) {
+      history.pushState(null, null, path)
       $(window).triggerHandler('smooth_transition')
     },
 

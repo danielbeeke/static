@@ -1,24 +1,43 @@
 {
-  "welcome-to-jekyll": {
-    "layout": "post",
-    "title": "News 1",
-    "date": "2015-01-05T20:09:40.000Z",
-    "categories": [
-      "jekyll",
-      "update"
+  "atechpro": {
+    "title": "Atechpro",
+    "subtitle": "Leverancier van hoge kwaliteit biomassa-ketels",
+    "tags": [
+      "Webdesign",
+      "Drupal website",
+      "Communicatieadvies",
+      "Infographics",
+      "Copywriting"
     ],
-    "preview": "You'll find this post in your `_posts` directory - edit this post and …",
-    "iso8601Date": "2015-01-05T21:09:40+01:00",
-    "basename": "welcome-to-jekyll"
+    "preview": "Voor Atechpro, een leverancier van hoge kwaliteit biomassa-ketels, …",
+    "basename": "atechpro"
   },
-  "yo-jekyllrb": {
-    "layout": "post",
-    "title": "News 2",
-    "categories": [
-      "jekyll",
-      "update"
+  "green-giraffe": {
+    "title": "Green Giraffe",
+    "subtitle": "The renewable energy financial advisors",
+    "tags": [
+      "Ruby",
+      "Ruby on Rails"
     ],
-    "preview": "# 'Allo, 'Allo!\n\nYou now have\n\n- Jekyll\n- Sass\n- redcarpet markdown …",
-    "basename": "yo-jekyllrb"
+    "preview": "Just a quick Ruby on Rails tip. This is how I implemented a method to …",
+    "basename": "green-giraffe"
+  },
+  "infographics": {
+    "title": "Infographics",
+    "subtitle": "Awesomesauce",
+    "tags": [
+      "Ruby",
+      "Ruby on Rails"
+    ],
+    "preview": "I've been writing a lot of statistics queries in Active Record/MySQL …",
+    "basename": "infographics"
+  },
+  "q-suite": {
+    "title": "git reset --soft as stash replacement and undo",
+    "tags": [
+      "Git"
+    ],
+    "preview": "With , if you have some work in progress and find you need to switch …",
+    "basename": "q-suite"
   }
 }

@@ -1,7 +1,14 @@
 // bower:scss
 // endbower
+
+$menu-height: 77px;
+$yellow: #ffd400;
+$gray: #323433;
+
+@import "compass";
 @import "breakpoint";
 @import "singularitygs";
 @import "layout/*";
 @import "layouts/*";
 @import "modules/*";
+@import "entities/*";

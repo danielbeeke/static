@@ -1,5 +1,7 @@
-{% for post in posts %}
-    {{ child("post-teaser", post, "post") }}
-{% else %}
-    No posts have been found.
-{% endfor %}
+<div class="post-wrapper">
+  {% for post in posts %}
+      {{ child("post-teaser", post, "post") }}
+  {% else %}
+      No posts have been found.
+  {% endfor %}
+</div>

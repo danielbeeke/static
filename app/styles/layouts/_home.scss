@@ -1,9 +1,21 @@
 [layer="home"] {
+  @include clearfix;
   opacity: 0;
-  padding-top: 40px;
+  padding-top: $menu-height;
   z-index: 4;
+  background: black;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
 
   &.active {
     opacity: 1;
+  }
+
+  .post-wrapper {
+    height: 100%;
+    position: relative;
   }
 }

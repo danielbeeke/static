@@ -2,11 +2,6 @@ define(['raamwerk/layer', 'jquery'], function (layer, $) {
   'use strict'
 
   // The layers factory
-
-  $(window).on('popstate smooth_transition', function(e) {
-    $('[layer].active').removeClass('active')
-  })
-
   var layers = {
     stack: {},
     addLayer: function (info) {
