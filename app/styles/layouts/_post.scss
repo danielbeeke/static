@@ -25,9 +25,6 @@
   .post--content {
     max-width: 960px;
     margin: 0 auto;
-    transition: transform .4s .7s, opacity .4s .7s;
-    transform: translateY(20px);
-    opacity: 0;
   }
 
   img {
@@ -39,16 +36,29 @@
   }
 
   &.active {
-    .post--content {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
     opacity: 1;
     z-index: 5;
+
+    .post--content {
+      @include animation(fadeIn .4s .8s 1 both);
+    }
   }
 
   &.inactive {
-    transition: z-index .1s, opacity .4s .7s;
+    transition: z-index .7s, opacity .4s .7s;
+
+    .post--content {
+      @include animation(fadeOut .4s 0s 1 both);
+    }
   }
+}
+
+@include keyframes(fadeIn) {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@include keyframes(fadeOut) {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(20px); }
 }
