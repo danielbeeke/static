@@ -43,9 +43,15 @@ define([], function () {
             var marked = require('marked')
             var post = requester.get(router.arg(1))
 
-            // TODO check how fail proof this is.
-            var postExploded = post.markdown.split('---')
-            post.full = marked(postExploded[2])
+            var hasFrontMatter = post.markdown.indexOf("---") > -1
+
+            if (hasFrontMatter) {
+              var postExploded = post.markdown.split('---')
+              post.full = marked(postExploded[2])
+            }
+            else {
+              post.full = marked(post.markdown)
+            }
 
             return {
               post: post
