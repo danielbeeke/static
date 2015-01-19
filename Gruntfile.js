@@ -438,7 +438,7 @@ module.exports = function (grunt) {
         'shell:twig',
         'clean:dist',
         'useminPrepare',
-        // 'concurrent:dist',
+        'concurrent:dist',
         'cssmin',
         'concat',
         'requirejs',
