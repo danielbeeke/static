@@ -376,7 +376,7 @@ module.exports = function (grunt) {
                         '*.{ico,png,txt}',
                         '.htaccess',
                         'CNAME',
-                        '_posts/*.md',
+                        '_posts/*.html',
                         'posts.json',
                         'styles/fonts.css',
                         'images/{,*/}*.{webp,gif}',
