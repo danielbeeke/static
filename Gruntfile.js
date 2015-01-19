@@ -446,7 +446,7 @@ module.exports = function (grunt) {
         'cssmin',
         'concat',
         'requirejs',
-        'uglify',
+        // 'uglify',
         'copy',
         // 'rev',
         'usemin'
