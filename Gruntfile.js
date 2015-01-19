@@ -37,7 +37,7 @@ module.exports = function (grunt) {
                 tasks: ['shell:twig']
             },
             shell2: {
-                files: ['<%= yeoman.app %>/_posts/{,*/}*.md'],
+                files: ['<%= yeoman.app %>/_posts/{,*/}*.html'],
                 tasks: ['shell:markdown']
             },
             compass: {
