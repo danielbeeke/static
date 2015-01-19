@@ -225,7 +225,8 @@ module.exports = function (grunt) {
                         'fontloader',
                         'home',
                         'requester',
-                        'raamwerk/devel'
+                        'raamwerk/devel',
+                        'marked'
                     ],
                     baseUrl : '<%= yeoman.app %>/scripts',
                     mainConfigFile : '<%= yeoman.app %>/scripts/main.js',
