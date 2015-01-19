@@ -444,7 +444,7 @@ module.exports = function (grunt) {
         'requirejs',
         'uglify',
         'copy',
-        'rev',
+        // 'rev',
         'usemin'
     ]);
 
