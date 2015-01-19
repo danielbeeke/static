@@ -222,6 +222,9 @@ module.exports = function (grunt) {
                         'raamwerk/context/route_context_condition',
                         'raamwerk/context/layer_context_reaction',
                         'raamwerk/context/dependencies_context_reaction',
+                        'fontloader',
+                        'home',
+                        'requester',
                         'raamwerk/devel'
                     ],
                     baseUrl : '<%= yeoman.app %>/scripts',
