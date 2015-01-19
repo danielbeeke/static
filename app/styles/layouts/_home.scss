@@ -1,17 +1,13 @@
 [layer="home"] {
   @include clearfix;
   padding-top: $menu-height;
-  z-index: 4;
+  z-index: 1;
   background: white;
   height: 100%;
   position: absolute;
   width: 100%;
   top: 0;
   left: 0;
-
-  &.active {
-
-  }
 
   .post-wrapper {
     height: 100%;

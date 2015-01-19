@@ -25,6 +25,12 @@ define(['raamwerk/layers', 'underscore'], function (layers, _) {
         layers.stack[layerKey].makeInActive()
       })
 
+      var activeLayers = _.unique(_.union(newLayerKeys, keepActiveLayerKeys))
+
+      $.each(activeLayers, function (delta, layerKey) {
+        layers.stack[layerKey].makeActive()
+      })
+
     }
   }
 

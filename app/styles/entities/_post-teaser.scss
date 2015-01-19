@@ -17,7 +17,6 @@
   background: white;
   float: left;
   position: relative;
-  transition: height .8s;
   outline: none;
 
   &:after {
@@ -29,12 +28,10 @@
     height: 100%;
     background: black;
     opacity: 0;
-    transition: all .5s;
   }
 
   img {
     max-width: 100%;
-    transition: all .5s;
     position: absolute;
     top: 50%;
     transform: translateY(-50%) scale(1);
@@ -78,5 +75,18 @@
     img {
       transform: translateY(-50%) scale(1);
     }
+  }
+}
+
+// Transitions
+.post--teaser {
+  transition: height ($speed * 1.5);
+
+  &:after {
+    transition: all $speed;
+  }
+
+  img {
+    transition: all $speed;
   }
 }

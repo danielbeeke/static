@@ -18,8 +18,16 @@ body,
   overflow: hidden;
 }
 
+* {
+  outline: none;
+}
+
 #app {
   width: 100%;
   box-sizing: content-box;
   padding-right: 20px;
+}
+
+[layer] {
+  transition: all $speed;
 }

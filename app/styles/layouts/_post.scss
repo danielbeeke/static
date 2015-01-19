@@ -2,13 +2,11 @@
   padding-top: $menu-height;
   position: absolute;
   top: 0;
-  z-index: 3;
   overflow-y: scroll;
   height: 100%;
   width: 100%;
-  opacity: 0;
-  transition: z-index .7s, opacity .4s .7s;
   background: white;
+  z-index: 0;
 
   .post--full {
     height: 100%;
@@ -25,6 +23,7 @@
   .post--content {
     max-width: 960px;
     margin: 0 auto;
+    opacity: 1;
   }
 
   img {
@@ -36,29 +35,39 @@
   }
 
   &.active {
-    opacity: 1;
-    z-index: 5;
+    @include animation(fadeInLayer $speed .6s 1 both);
 
     .post--content {
-      @include animation(fadeIn .4s .8s 1 both);
+      @include animation(fadeInPost $speed .6s 1 both);
     }
   }
 
   &.inactive {
-    transition: z-index .7s, opacity .4s .7s;
+    @include animation(fadeOutLayer (($speed / 10) * 8) 1 both);
 
     .post--content {
-      @include animation(fadeOut .4s 0s 1 both);
+      @include animation(fadeOutPost (($speed / 10) * 8) 1 both);
     }
   }
 }
 
-@include keyframes(fadeIn) {
-  0% { opacity: 0; transform: translateY(20px); }
+@include keyframes(fadeInLayer) {
+  1% { z-index: 5; }
+  100% { z-index: 5; }
+}
+
+@include keyframes(fadeOutLayer) {
+  1% { z-index: 5; }
+  99% { z-index: 5; }
+  100% { z-index: -1; }
+}
+
+@include keyframes(fadeInPost) {
+  0% { opacity: 0; transform: translateY(-20px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 
-@include keyframes(fadeOut) {
+@include keyframes(fadeOutPost) {
   0% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 0; transform: translateY(-20px); }
 }

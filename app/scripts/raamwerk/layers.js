@@ -13,10 +13,6 @@ define(['raamwerk/layer', 'jquery'], function (layer, $) {
       else {
         var currentLayer = layers.stack[info.key]
       }
-
-      setTimeout(function () {
-        currentLayer.makeActive()
-      }, 10)
     },
   }
 
