@@ -20,7 +20,7 @@ define(['underscore'], function (_) {
       if (slug && !stories[slug].markdown) {
         $.ajax({
           async: false,
-          url: '/posts/' + stories[slug].basename + '.markdown',
+          url: '/posts/' + stories[slug].basename + '.txt',
           success: function (data) {
             stories[slug].markdown = data
           }

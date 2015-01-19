@@ -106,7 +106,7 @@ module.exports = function (grunt) {
                 options: {
                     middleware: function (connect) {
                         return [
-                            modRewrite(['!\\.html|\\.js|\\.svg|\\.ttf|\\.woff|\\.css|\\.markdown|\\.jpg|\\.png$ /index.html [L]']),
+                            modRewrite(['!\\.html|\\.js|\\.svg|\\.ttf|\\.woff|\\.css|\\.txt|\\.jpg|\\.png$ /index.html [L]']),
                             lrSnippet,
                             mountFolder(connect, '.tmp'),
                             mountFolder(connect, yeomanConfig.app)
