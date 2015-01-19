@@ -1,4 +1,4 @@
-define(['raamwerk/context', 'history'], function (context, history) {
+define(['raamwerk/context', 'history'], function (context) {
   'use strict'
 
   // A context condition plugin gets a list of contexts that apply for the plugin.
