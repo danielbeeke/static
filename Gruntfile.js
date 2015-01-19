@@ -37,7 +37,7 @@ module.exports = function (grunt) {
                 tasks: ['shell:twig']
             },
             shell2: {
-                files: ['<%= yeoman.app %>/_posts/{,*/}*.html'],
+                files: ['<%= yeoman.app %>/posts/{,*/}*.html'],
                 tasks: ['shell:markdown']
             },
             compass: {
@@ -77,7 +77,7 @@ module.exports = function (grunt) {
             },
             markdown: {
                 dist: {},
-                command: 'node_modules/markdown-to-json/bin/m2j -o app/posts.json app/_posts/*'
+                command: 'node_modules/markdown-to-json/bin/m2j -o app/posts.json app/posts/*'
             }
         },
 
@@ -376,7 +376,7 @@ module.exports = function (grunt) {
                         '*.{ico,png,txt}',
                         '.htaccess',
                         'CNAME',
-                        '_posts/*.html',
+                        'posts/*.html',
                         'posts.json',
                         'styles/fonts.css',
                         'images/{,*/}*.{webp,gif}',
