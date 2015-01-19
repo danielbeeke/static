@@ -222,9 +222,7 @@ module.exports = function (grunt) {
                         'raamwerk/context/route_context_condition',
                         'raamwerk/context/layer_context_reaction',
                         'raamwerk/context/dependencies_context_reaction',
-                        'raamwerk/devel',
-                        'journey/timeline',
-                        'fixtures'
+                        'raamwerk/devel'
                     ],
                     baseUrl : '<%= yeoman.app %>/scripts',
                     mainConfigFile : '<%= yeoman.app %>/scripts/main.js',
