@@ -1,0 +1,53 @@
+{
+  "1-green-giraffe-2": {
+    "title": "Green Giraffe",
+    "subtitle": "The renewable energy financial advisors",
+    "tags": [
+      "Ruby",
+      "Ruby on Rails"
+    ],
+    "preview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean …",
+    "basename": "1-green-giraffe-2"
+  },
+  "atechpro": {
+    "title": "Atechpro",
+    "subtitle": "Leverancier van hoge kwaliteit biomassa-ketels",
+    "tags": [
+      "Webdesign",
+      "Drupal website",
+      "Communicatieadvies",
+      "Infographics",
+      "Copywriting"
+    ],
+    "preview": "Voor Atechpro, een leverancier van hoge kwaliteit biomassa-ketels, …",
+    "basename": "atechpro"
+  },
+  "green-giraffe": {
+    "title": "Green Giraffe",
+    "subtitle": "The renewable energy financial advisors",
+    "tags": [
+      "Ruby",
+      "Ruby on Rails"
+    ],
+    "preview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean …",
+    "basename": "green-giraffe"
+  },
+  "infographics": {
+    "title": "Infographics",
+    "subtitle": "Awesomesauce",
+    "tags": [
+      "Ruby",
+      "Ruby on Rails"
+    ],
+    "preview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean …",
+    "basename": "infographics"
+  },
+  "q-suite": {
+    "title": "git reset --soft as stash replacement and undo",
+    "tags": [
+      "Git"
+    ],
+    "preview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean …",
+    "basename": "q-suite"
+  }
+}
