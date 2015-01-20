@@ -33,6 +33,14 @@ body,
 [layer] {
   transition: all 0.5s;
 }
+/* line 34, ../../app/styles/layout/_layout.scss */
+[layer].active {
+  opacity: 1;
+}
+/* line 39, ../../app/styles/layout/_layout.scss */
+[layer].inactive {
+  opacity: .999999;
+}
 
 /* line 1, ../../app/styles/layouts/_about.scss */
 [layer="about"] {
