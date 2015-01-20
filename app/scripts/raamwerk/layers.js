@@ -36,16 +36,19 @@ define(['raamwerk/layer', 'jquery'], function (layer, $) {
       var keepActiveLayerKeys = _.intersection(currentLayerKeys, newLayerKeys)
       makeInactiveLayerKeys = _.difference(currentLayerKeys, keepActiveLayerKeys)
 
-
       $.each(makeInactiveLayerKeys, function (delta, layerKey) {
         layers.stack[layerKey].makeInActive()
 
-        $(layers.stack[layerKey].element).one(transitionEnd, function (e) {
+        $(layers.stack[layerKey].element).one('transitionend', function (e) {
           layers.layerInactiveAnimationEnd(layerKey)
         })
       })
 
       activeLayers = _.unique(_.union(newLayerKeys, keepActiveLayerKeys))
+
+      $.each(activeLayers, function (delta, layerKey) {
+        $('body').trigger( 'layer-active-early', [layers.stack[layerKey]] )
+      })
 
       layers.layerInactiveAnimationEnd()
 

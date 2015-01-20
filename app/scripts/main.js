@@ -16,10 +16,5 @@ require(['jquery', 'raamwerk/context'], function ($, context) {
 
   'use strict'
 
-  // webkit get's called twice.
-  window.transitionEnd = 'transitionend'
-  window.animationEnd = 'animationend'
-  window.maxWaitForTransition = 3000
-
   context.init()
 })

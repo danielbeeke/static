@@ -21,24 +21,22 @@ define(['raamwerk/renderer'], function (renderer) {
       // Class methods.
       claimElement: function () {
         if (!$('[layer="' + innerClass.key + '"]').length) {
-          $('#app').append('<div layer="' + innerClass.key + '" class="inactive"></div>')
+          $('#app').append('<div layer="' + innerClass.key + '"></div>')
         }
 
         innerClass.element = $('[layer="' + innerClass.key + '"]')[0]
       },
 
       makeActive: function () {
-        this.active = true
-        $(innerClass.element).removeClass('inactive').addClass('active')
         $('body').trigger( 'layer-active', [innerClass] )
+        innerClass.active = true
+        $(innerClass.element).removeClass('inactive').addClass('active')
       },
 
       makeInActive: function () {
-        window.hasHadInactive = true
-        this.active = false
-        $(innerClass.element).addClass('inactive').removeClass('active')
-
         $('body').trigger( 'layer-inactive', [innerClass] )
+        innerClass.active = false
+        $(innerClass.element).addClass('inactive').removeClass('active')
       },
 
       render: function () {
