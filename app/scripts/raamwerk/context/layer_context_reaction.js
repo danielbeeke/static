@@ -4,13 +4,9 @@ define(['raamwerk/layers', 'underscore'], function (layers, _) {
   var layer_context_reaction = {
     weight: 1,
     execute: function (newContexts, callback) {
-      var currentLayerKeys = _.keys(layers.stack)
-      var newLayerKeys = []
-
       $.each(newContexts, function (contextName, contextDefinition) {
         $.each(contextDefinition.reactions.layer, function (delta, layerInfo) {
           layers.addLayer(layerInfo)
-          newLayerKeys.push(layerInfo.key)
         })
 
         if (callback && typeof callback == 'function') {
@@ -18,19 +14,7 @@ define(['raamwerk/layers', 'underscore'], function (layers, _) {
         }
       })
 
-      var keepActiveLayerKeys = _.intersection(currentLayerKeys, newLayerKeys)
-      var makeInactiveLayerKeys = _.difference(currentLayerKeys, keepActiveLayerKeys)
-
-      $.each(makeInactiveLayerKeys, function (delta, layerKey) {
-        layers.stack[layerKey].makeInActive()
-      })
-
-      var activeLayers = _.unique(_.union(newLayerKeys, keepActiveLayerKeys))
-
-      $.each(activeLayers, function (delta, layerKey) {
-        layers.stack[layerKey].makeActive()
-      })
-
+      layers.finalize()
     }
   }
 

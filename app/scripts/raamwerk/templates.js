@@ -15,7 +15,7 @@ define(['twig'], function (twig) {
           data: '<div class="post--full">  <div class="img-wrapper">    <img src="/images/thumbs/{{ post.basename }}.jpg">  </div>  <div class="post--content">    <h3>{{ post.title }}</h3>    <div class="body">      {{ post.full }}    </div>  </div></div>'
 }),
 'post-teaser': twig.twig({
-          data: '<a href="/post/{{ post.basename }}" class="post--teaser">  <img src="/images/thumbs/{{ post.basename }}.jpg">  <h3>{{ post.title }}</h3>  <h4>{{ post.subtitle }}</h4></a>'
+          data: '<a href="/post/{{ post.basename }}" class="post--teaser" ondragstart="return false;">  <img src="/images/thumbs/{{ post.basename }}.jpg">  <h3>{{ post.title }}</h3>  <h4>{{ post.subtitle }}</h4></a>'
 }),
 
 
