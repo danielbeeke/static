@@ -29,6 +29,7 @@ body,
 }
 
 [layer] {
+  transform: translateZ(0);
   transition: all $speed;
 
   &.active {

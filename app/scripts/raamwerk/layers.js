@@ -40,13 +40,14 @@ define(['raamwerk/layer', 'jquery'], function (layer, $) {
       $.each(makeInactiveLayerKeys, function (delta, layerKey) {
         layers.stack[layerKey].makeInActive()
 
-        // Webkit bug, transition doesnt get called
         $(layers.stack[layerKey].element).one(transitionEnd, function (e) {
           layers.layerInactiveAnimationEnd(layerKey)
         })
       })
 
       activeLayers = _.unique(_.union(newLayerKeys, keepActiveLayerKeys))
+
+      layers.layerInactiveAnimationEnd()
 
       newLayerKeys = []
     }

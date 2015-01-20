@@ -21,7 +21,7 @@ define(['raamwerk/renderer'], function (renderer) {
       // Class methods.
       claimElement: function () {
         if (!$('[layer="' + innerClass.key + '"]').length) {
-          $('#app').append('<div layer="' + innerClass.key + '"></div>')
+          $('#app').append('<div layer="' + innerClass.key + '" class="inactive"></div>')
         }
 
         innerClass.element = $('[layer="' + innerClass.key + '"]')[0]
