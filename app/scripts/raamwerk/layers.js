@@ -3,6 +3,8 @@ define(['raamwerk/layer', 'jquery'], function (layer, $) {
 
   // The layers factory
   var newLayerKeys = []
+  var makeInactiveLayerKeys = []
+  var activeLayers = []
 
   var layers = {
     stack: {},
@@ -19,20 +21,32 @@ define(['raamwerk/layer', 'jquery'], function (layer, $) {
       }
     },
 
+    layerInactiveAnimationEnd: function (layerKey) {
+      makeInactiveLayerKeys = _.without(makeInactiveLayerKeys, layerKey)
+
+      if (_.size(makeInactiveLayerKeys) == 0) {
+        $.each(activeLayers, function (delta, layerKey) {
+          layers.stack[layerKey].makeActive()
+        })
+      }
+    },
+
     finalize: function () {
       var currentLayerKeys = _.keys(layers.stack)
       var keepActiveLayerKeys = _.intersection(currentLayerKeys, newLayerKeys)
-      var makeInactiveLayerKeys = _.difference(currentLayerKeys, keepActiveLayerKeys)
+      makeInactiveLayerKeys = _.difference(currentLayerKeys, keepActiveLayerKeys)
+
 
       $.each(makeInactiveLayerKeys, function (delta, layerKey) {
         layers.stack[layerKey].makeInActive()
+
+        // Webkit bug, transition doesnt get called
+        $(layers.stack[layerKey].element).one(transitionEnd, function (e) {
+          layers.layerInactiveAnimationEnd(layerKey)
+        })
       })
 
-      var activeLayers = _.unique(_.union(newLayerKeys, keepActiveLayerKeys))
-
-      $.each(activeLayers, function (delta, layerKey) {
-        layers.stack[layerKey].makeActive()
-      })
+      activeLayers = _.unique(_.union(newLayerKeys, keepActiveLayerKeys))
 
       newLayerKeys = []
     }

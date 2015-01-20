@@ -28,28 +28,15 @@ define(['raamwerk/renderer'], function (renderer) {
       },
 
       makeActive: function () {
-        if (!window.hasHadInactive) {
-            this.active = true
-            $(innerClass.element).removeClass('inactive').addClass('active')
-            $('body').trigger( 'layer-active', [innerClass] )
-        }
-        else {
-          $('body').one('inactive-animation-end', function () {
-            this.active = true
-            $(innerClass.element).removeClass('inactive').addClass('active')
-            $('body').trigger( 'layer-active', [innerClass] )
-          })
-        }
+        this.active = true
+        $(innerClass.element).removeClass('inactive').addClass('active')
+        $('body').trigger( 'layer-active', [innerClass] )
       },
 
       makeInActive: function () {
         window.hasHadInactive = true
         this.active = false
         $(innerClass.element).addClass('inactive').removeClass('active')
-
-        $(innerClass.element).one(transitionEnd, function () {
-          $('body').trigger( 'inactive-animation-end' )
-        })
 
         $('body').trigger( 'layer-inactive', [innerClass] )
       },

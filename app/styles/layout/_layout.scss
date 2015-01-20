@@ -30,4 +30,14 @@ body,
 
 [layer] {
   transition: all $speed;
+
+  &.active {
+    // For transition end event.
+    opacity: 1;
+  }
+
+  &.inactive {
+    // For transition end event.
+    opacity: .999999;
+  }
 }
