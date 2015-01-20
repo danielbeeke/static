@@ -5,6 +5,8 @@ define(['raamwerk/layer', 'jquery'], function (layer, $) {
   var newLayerKeys = []
   var makeInactiveLayerKeys = []
   var activeLayers = []
+  var currentLayerKeys = []
+  var keepActiveLayerKeys = []
 
   var layers = {
     stack: {},
@@ -26,16 +28,33 @@ define(['raamwerk/layer', 'jquery'], function (layer, $) {
 
       if (_.size(makeInactiveLayerKeys) == 0) {
         $.each(activeLayers, function (delta, layerKey) {
+          $(layers.stack[layerKey].element).removeClass('no-transitions')
           layers.stack[layerKey].makeActive()
         })
       }
     },
 
     finalize: function () {
-      var currentLayerKeys = _.keys(layers.stack)
-      var keepActiveLayerKeys = _.intersection(currentLayerKeys, newLayerKeys)
+      currentLayerKeys = _.keys(layers.stack)
+      keepActiveLayerKeys = _.intersection(currentLayerKeys, newLayerKeys)
       makeInactiveLayerKeys = _.difference(currentLayerKeys, keepActiveLayerKeys)
+      activeLayers = _.unique(_.union(newLayerKeys, keepActiveLayerKeys))
 
+      var callback = {}
+
+      $('body').trigger( 'delay-transfer', [activeLayers, makeInactiveLayerKeys, callback] )
+
+      if (callback.do) {
+        callback.do(function () {
+          layers.realFinalize()
+        })
+      }
+      else {
+        layers.realFinalize()
+      }
+    },
+
+    realFinalize: function () {
       $.each(makeInactiveLayerKeys, function (delta, layerKey) {
         layers.stack[layerKey].makeInActive()
 
@@ -44,9 +63,9 @@ define(['raamwerk/layer', 'jquery'], function (layer, $) {
         })
       })
 
-      activeLayers = _.unique(_.union(newLayerKeys, keepActiveLayerKeys))
 
       $.each(activeLayers, function (delta, layerKey) {
+        $(layers.stack[layerKey].element).addClass('no-transitions')
         $('body').trigger( 'layer-active-early', [layers.stack[layerKey]] )
       })
 
@@ -54,6 +73,8 @@ define(['raamwerk/layer', 'jquery'], function (layer, $) {
 
       newLayerKeys = []
     }
+
+
   }
 
   return layers
