@@ -23,21 +23,28 @@ body,
 }
 
 /* line 25, ../../app/styles/layout/_layout.scss */
+*.no-transitions, * *.no-transitions, * * *.no-transitions,
+*.no-transitions *, * *.no-transitions * *, * * *.no-transitions * * * {
+  transition: none !important;
+}
+
+/* line 30, ../../app/styles/layout/_layout.scss */
 #app {
   width: 100%;
   box-sizing: content-box;
   padding-right: 20px;
 }
 
-/* line 31, ../../app/styles/layout/_layout.scss */
+/* line 36, ../../app/styles/layout/_layout.scss */
 [layer] {
+  transform: translateZ(0);
   transition: all 0.5s;
 }
-/* line 34, ../../app/styles/layout/_layout.scss */
+/* line 40, ../../app/styles/layout/_layout.scss */
 [layer].active {
   opacity: 1;
 }
-/* line 39, ../../app/styles/layout/_layout.scss */
+/* line 45, ../../app/styles/layout/_layout.scss */
 [layer].inactive {
   opacity: .999999;
 }
